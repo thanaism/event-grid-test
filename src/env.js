@@ -8,6 +8,8 @@ export const env = createEnv({
    */
   server: {
     NODE_ENV: z.enum(["development", "test", "production"]),
+    AAD_CLIENT_ID: z.string().uuid(),
+    AAD_TENANT_ID: z.string().uuid(),
   },
 
   /**
@@ -25,6 +27,8 @@ export const env = createEnv({
    */
   runtimeEnv: {
     NODE_ENV: process.env.NODE_ENV,
+    AAD_CLIENT_ID: process.env.AAD_CLIENT_ID,
+    AAD_TENANT_ID: process.env.AAD_TENANT_ID,
     // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
   },
   /**
